@@ -14,14 +14,24 @@ Cell::Cell(pack p,int ind)
 
 std::cout<<'\n';
 }
-/*Cell&  Cell::operator=(Cell ce )
+/*Cell& Cell::operator=(const Cell &ce )
 {
- n=ce.n;
- for(int i=0;i<n;i++) neighboors[i]=ce.neighboors[i];
- index=ce.index;
- isActive=ce.isActive;
- isAlive=ce.isAlive;
- return *this;
+ Cell OBJ(ce);
+ OBJ.n=ce.n;
+ for(int i=0;i<n;i++) OBJ.neighboors[i]=ce.neighboors[i];
+ OBJ.index=ce.index;
+ OBJ.isActive=ce.isActive;
+ OBJ.isAlive=ce.isAlive;
+ return OBJ;
+}
+Cell::Cell(const Cell &obj)
+{
+    n=obj.n;
+    neighboors=new int[n];
+    for(int i=0;i<n;i++)neighboors[i]=obj.neighboors[i];
+    index=obj.index;
+    isActive=obj.isActive;
+    isAlive=obj.isAlive;
 }*/
 Cell::Cell()
 {
