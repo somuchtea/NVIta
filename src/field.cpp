@@ -28,6 +28,7 @@ void field::getLbords()
     /*
     for(int i=0;i<N;i++)
     {
+    //ss
        // cells[i].lbords=0;
         for(int j=0;j<cells[i].n;j++)
       //  {cells[i].lbords+=cells[cells[i].neighboors[j]].getState();
