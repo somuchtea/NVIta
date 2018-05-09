@@ -7,22 +7,13 @@ Cell::Cell(pack p,int ind)
     lbords=0;
     index=ind;
     n=p.n;
-    std::cout<<"ind="<<index;
+    //std::cout<<"ind="<<index;
     neighboors= new int[n];
     for(int i=0;i<n;i++)
-      {   neighboors[i]=p.connectedCells[i];  std::cout<<"  i="<<i<<" nei="<<neighboors[i];}
+      {   neighboors[i]=p.connectedCells[i];  //std::cout<<"  i="<<i<<" nei="<<neighboors[i];
+      }
 
-std::cout<<'\n';
-}
-/*Cell& Cell::operator=(const Cell &ce )
-{
- Cell OBJ(ce);
- OBJ.n=ce.n;
- for(int i=0;i<n;i++) OBJ.neighboors[i]=ce.neighboors[i];
- OBJ.index=ce.index;
- OBJ.isActive=ce.isActive;
- OBJ.isAlive=ce.isAlive;
- return OBJ;
+//std::cout<<'\n';
 }
 Cell::Cell(const Cell &obj)
 {
@@ -32,7 +23,21 @@ Cell::Cell(const Cell &obj)
     index=obj.index;
     isActive=obj.isActive;
     isAlive=obj.isAlive;
-}*/
+}
+Cell& Cell::operator=(const Cell &ce )
+{
+ delete[] neighboors;
+
+    n=ce.n;
+    neighboors = new int[n];
+    for(int i=0;i<n;i++) neighboors[i]=ce.neighboors[i];
+    index=ce.index;
+    isActive=ce.isActive;
+    isAlive=ce.isAlive;
+
+    return *this;
+}
+
 Cell::Cell()
 {
     isAlive=0;

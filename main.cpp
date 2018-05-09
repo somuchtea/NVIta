@@ -30,7 +30,10 @@ static void display(void)
         {
             glColor3ub(50,50,50);
                 if(Bfie.getcells()[point2ind(i*(width/columns),j*(height/rows))].getState())
-                    glColor3ub(100,255,100);
+                    {glColor3ub(100,180,100);
+                    if(Bfie.getcells()[point2ind(i*(width/columns),j*(height/rows))].isActive)
+                        glColor3ub(100,255,100);}
+                else{if(Bfie.getcells()[point2ind(i*(width/columns),j*(height/rows))].isActive)glColor3ub(70,50,50);}
             glBegin(GL_QUADS);
             glVertex2i(i*(width/columns),j*(height/rows));
             glVertex2i((i+1)*(width/columns),j*(height/rows));
@@ -47,7 +50,7 @@ void mouse(int button,int state,int x,int y)
 {
    if(button==GLUT_LEFT_BUTTON&&state==GLUT_DOWN)
      {Bfie.getcells()[point2ind(x,y)].revive();
-     cout<<"ind="<<point2ind(x,y)<<endl;cout<<Bfie.getcells()[0].neighboors[0]<<endl;}
+     cout<<"ind="<<point2ind(x,y)<<endl;}
     if(button==GLUT_RIGHT_BUTTON&&state==GLUT_DOWN)
         {Bfie.getcells()[point2ind(x,y)].kill();}
 
@@ -56,9 +59,9 @@ static void key(unsigned char key, int x, int y)
 {
     if(key==' ')
     {
-        cout<<Bfie.getcells()[0].neighboors[0]<<endl;
+        //cout<<Bfie.getcells()[0].neighboors[0]<<endl;
         Bfie.getLbords();
-        //Bfie.iteration();
+        Bfie.iteration();
     }
     glutPostRedisplay();
 }

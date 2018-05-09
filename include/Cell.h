@@ -9,8 +9,8 @@ class Cell
 {
     public:
         Cell(pack pp,int ind);//"мера",индекс
-        //Cell & operator = (const Cell &ce);
-        //Cell(const Cell &obj);
+        Cell & operator = (const Cell &ce);
+        Cell(const Cell &obj);
         Cell();
         ~Cell();
         void kill(){isAlive=0;}

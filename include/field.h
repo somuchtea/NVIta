@@ -2,8 +2,8 @@
 #define FIELD_H
 #include "Cell.h"
 using namespace std;
-const int rows=8;
-const int columns=8;
+const int rows=10;
+const int columns=10;
 struct Point{
 int x,y;
 };
