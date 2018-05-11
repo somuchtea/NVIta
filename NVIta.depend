@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1525617887 source:c:\users\Сергей\desktop\nvita\main.cpp
+1526065069 source:c:\users\Сергей\desktop\nvita\main.cpp
 	<GL/glut.h>
 	<stdlib.h>
 	<ctime>
@@ -223,11 +223,11 @@
 	<stddef.h>
 	<GL/gl.h>
 
-1525623411 source:c:\users\Сергей\desktop\nvita\src\field.cpp
+1526063769 source:c:\users\Сергей\desktop\nvita\src\field.cpp
 	"field.h"
 	<iostream>
 
-1525622054 c:\users\Сергей\desktop\nvita\include\field.h
+1526063674 c:\users\Сергей\desktop\nvita\include\field.h
 	"Cell.h"
 
 1525615713 source:c:\users\Сергей\desktop\nvita\src\cell.cpp

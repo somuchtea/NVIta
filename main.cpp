@@ -5,8 +5,8 @@
 #include <windows.h>
 #include "field.h"
 using namespace std;
-const int width=800;
-const int height=600;
+const int width=700;
+const int height=700;
 void init () {
 
 	glClearColor ( 0.0, 0.0, 0.0, 0.0 );
@@ -15,7 +15,7 @@ void init () {
 }
 field Bfie(rows*columns,mu);
 
-
+bool hold=0;
 int point2ind(int x,int y)
 {
     return ((y/(height/rows))*columns)+x/(width/columns)+1;
@@ -50,7 +50,8 @@ void mouse(int button,int state,int x,int y)
 {
    if(button==GLUT_LEFT_BUTTON&&state==GLUT_DOWN)
      {Bfie.getcells()[point2ind(x,y)].revive();
-     cout<<"ind="<<point2ind(x,y)<<endl;}
+     //cout<<"ind="<<point2ind(x,y)<<endl;
+     }
     if(button==GLUT_RIGHT_BUTTON&&state==GLUT_DOWN)
         {Bfie.getcells()[point2ind(x,y)].kill();}
 
@@ -63,10 +64,16 @@ static void key(unsigned char key, int x, int y)
         Bfie.getLbords();
         Bfie.iteration();
     }
+    if(key=='x')hold=!hold;
     glutPostRedisplay();
 }
 static void idle(void)
 {
+    if(hold)
+    {
+        Bfie.getLbords();
+        Bfie.iteration();
+    }
     glutPostRedisplay();
     Sleep(100);
 }
