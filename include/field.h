@@ -44,7 +44,7 @@ static pack mu(int ind)
 class field:public Cell
 {
     public:
-        field(int n,pack(*f)(int));//число клеток
+        field(int n,pack(*f)(int));//amount of cells
         void iteration();
         void getLbords();
         void check();
