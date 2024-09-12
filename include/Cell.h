@@ -2,13 +2,13 @@
 #define CELL_H
 #include <iostream>
 struct pack{
-int n;//число соседей
+int n;//amount of neighboors
 int *connectedCells;
-};//список соседей
+};//list of neighboors
 class Cell
 {
     public:
-        Cell(pack pp,int ind);//"мера",индекс
+        Cell(pack pp,int ind);//"measure", index
         Cell & operator = (const Cell &ce);
         Cell(const Cell &obj);
         Cell();
